@@ -30,7 +30,7 @@ export default function Dashboard(){
     return Object.entries(buckets).map(([name, value])=>({ name, value }));
   }, [screenings]);
 
-  const colors = ["#22c55e", "#a3e635", "#f59e0b", "#ef4444", "#7c3aed"];
+  const colors = ["#16a34a", "#86efac", "#f59e0b", "#ef4444", "#7c3aed"];
 
   return (
     <div className="grid gap-6 lg:grid-cols-3">
