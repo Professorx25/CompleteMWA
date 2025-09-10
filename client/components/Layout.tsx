@@ -60,7 +60,7 @@ export default function Layout() {
       </main>
       <footer className="border-t py-8 text-center text-sm text-muted-foreground">
         <div className="container flex flex-col md:flex-row items-center justify-between gap-4">
-          <p>© {new Date().getFullYear()} MindSathi. For education only, not a substitute for professional care.</p>
+          <p>© {new Date().getFullYear()} MindSpace. For education only, not a substitute for professional care.</p>
           <div className="flex gap-4">
             <a href="https://www.nimhans.ac.in/" target="_blank" rel="noreferrer" className="hover:underline">NIMHANS</a>
             <a href="https://www.mohfw.gov.in/" target="_blank" rel="noreferrer" className="hover:underline">MoHFW</a>
