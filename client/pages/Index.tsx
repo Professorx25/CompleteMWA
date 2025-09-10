@@ -22,7 +22,6 @@ import {
   BookOpen,
 } from "lucide-react";
 import { store } from "@/lib/store";
-import { HERO_BG } from "@/assets/logo";
 import { useEffect, useMemo, useState } from "react";
 
 const features = [
