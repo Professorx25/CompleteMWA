@@ -100,16 +100,44 @@ export function guid() {
 }
 
 export function sentimentScore(text: string) {
-  const pos = ["happy","good","calm","relaxed","hope","better","okay","progress"]; 
-  const neg = ["sad","bad","anxious","depressed","stress","panic","hate","tired","worthless","hopeless","kill","die","suicide","self-harm"]; 
+  const pos = [
+    "happy",
+    "good",
+    "calm",
+    "relaxed",
+    "hope",
+    "better",
+    "okay",
+    "progress",
+  ];
+  const neg = [
+    "sad",
+    "bad",
+    "anxious",
+    "depressed",
+    "stress",
+    "panic",
+    "hate",
+    "tired",
+    "worthless",
+    "hopeless",
+    "kill",
+    "die",
+    "suicide",
+    "self-harm",
+  ];
   const t = text.toLowerCase();
   let s = 0;
-  pos.forEach(w => { if (t.includes(w)) s += 1; });
-  neg.forEach(w => { if (t.includes(w)) s -= 1; });
+  pos.forEach((w) => {
+    if (t.includes(w)) s += 1;
+  });
+  neg.forEach((w) => {
+    if (t.includes(w)) s -= 1;
+  });
   return Math.max(-1, Math.min(1, s / 5));
 }
 
-export function severityFromScore(tool: "PHQ-9"|"GAD-7", score: number) {
+export function severityFromScore(tool: "PHQ-9" | "GAD-7", score: number) {
   if (tool === "PHQ-9") {
     if (score <= 4) return "Minimal";
     if (score <= 9) return "Mild";
@@ -126,13 +154,34 @@ export function severityFromScore(tool: "PHQ-9"|"GAD-7", score: number) {
 
 export function aiTriage(text: string) {
   const t = text.toLowerCase();
-  const crisis = /(suicide|kill myself|end it|self\-?harm|hurt myself|overdose)/.test(t);
-  if (crisis) return { level: "severe" as const, actions: ["Activate Crisis Mode", "Contact helpline"], suggestions: ["You are not alone. Immediate help is available."] };
-  const severe = /(can\'t cope|panic attacks|no sleep for days|worthless|hopeless)/.test(t);
-  if (severe) return { level: "severe" as const, actions: ["Book counsellor"], suggestions: ["Try grounding: 5-4-3-2-1 technique"] };
+  const crisis =
+    /(suicide|kill myself|end it|self\-?harm|hurt myself|overdose)/.test(t);
+  if (crisis)
+    return {
+      level: "severe" as const,
+      actions: ["Activate Crisis Mode", "Contact helpline"],
+      suggestions: ["You are not alone. Immediate help is available."],
+    };
+  const severe =
+    /(can\'t cope|panic attacks|no sleep for days|worthless|hopeless)/.test(t);
+  if (severe)
+    return {
+      level: "severe" as const,
+      actions: ["Book counsellor"],
+      suggestions: ["Try grounding: 5-4-3-2-1 technique"],
+    };
   const moderate = /(can\'t sleep|stress|anxious|overwhelmed|burnout)/.test(t);
-  if (moderate) return { level: "moderate" as const, actions: ["Breathing exercise", "Short walk"], suggestions: ["Box breathing: inhale 4, hold 4, exhale 4, hold 4"] };
-  return { level: "mild" as const, actions: ["Hydrate", "Stretch"], suggestions: ["A short break can help reset."] };
+  if (moderate)
+    return {
+      level: "moderate" as const,
+      actions: ["Breathing exercise", "Short walk"],
+      suggestions: ["Box breathing: inhale 4, hold 4, exhale 4, hold 4"],
+    };
+  return {
+    level: "mild" as const,
+    actions: ["Hydrate", "Stretch"],
+    suggestions: ["A short break can help reset."],
+  };
 }
 
 export function isHarmful(text: string) {
@@ -146,18 +195,44 @@ export type Profile = {
 };
 
 export function randomNickname() {
-  const adj = ["Gentle","Quiet","Calm","Kind","Brave","Sunny","Gentle","Kind","Warm","Hopeful"];
-  const noun = ["Sunbeam","River","Breeze","Harbor","Willow","Meadow","Horizon","Echo","Pulse","Orbit"];
-  const a = adj[Math.floor(Math.random()*adj.length)];
-  const n = noun[Math.floor(Math.random()*noun.length)];
-  return `${a}${n}${Math.floor(Math.random()*90)+10}`;
+  const adj = [
+    "Gentle",
+    "Quiet",
+    "Calm",
+    "Kind",
+    "Brave",
+    "Sunny",
+    "Gentle",
+    "Kind",
+    "Warm",
+    "Hopeful",
+  ];
+  const noun = [
+    "Sunbeam",
+    "River",
+    "Breeze",
+    "Harbor",
+    "Willow",
+    "Meadow",
+    "Horizon",
+    "Echo",
+    "Pulse",
+    "Orbit",
+  ];
+  const a = adj[Math.floor(Math.random() * adj.length)];
+  const n = noun[Math.floor(Math.random() * noun.length)];
+  return `${a}${n}${Math.floor(Math.random() * 90) + 10}`;
 }
 
 export const profileStore = {
   getProfile(): Profile {
     const p = read<Profile | null>("profile", null);
     if (p) return p;
-    const newP: Profile = { id: guid(), pseudonym: randomNickname(), collegeId: null };
+    const newP: Profile = {
+      id: guid(),
+      pseudonym: randomNickname(),
+      collegeId: null,
+    };
     write("profile", newP);
     return newP;
   },

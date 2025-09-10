@@ -25,9 +25,15 @@ export default function Layout() {
       <header className="sticky top-0 z-40 border-b bg-background/80 backdrop-blur">
         <div className="container flex h-16 items-center justify-between gap-4">
           <Link to="/" className="flex items-center gap-2 font-semibold">
-            <img src={LOGO_URL} alt="MindSpace" className="h-8 w-8 rounded-md bg-primary p-1 object-contain" />
+            <img
+              src={LOGO_URL}
+              alt="MindSpace"
+              className="h-8 w-8 rounded-md bg-primary p-1 object-contain"
+            />
             <span>MindSpace</span>
-            <Badge variant="secondary" className="hidden sm:inline">Beta</Badge>
+            <Badge variant="secondary" className="hidden sm:inline">
+              Beta
+            </Badge>
           </Link>
           <nav className="hidden md:flex items-center gap-2">
             {nav.map((n) => (
@@ -60,11 +66,30 @@ export default function Layout() {
       </main>
       <footer className="border-t py-8 text-center text-sm text-muted-foreground">
         <div className="container flex flex-col md:flex-row items-center justify-between gap-4">
-          <p>© {new Date().getFullYear()} MindSpace. For education only, not a substitute for professional care.</p>
+          <p>
+            © {new Date().getFullYear()} MindSpace. For education only, not a
+            substitute for professional care.
+          </p>
           <div className="flex gap-4">
-            <a href="https://www.nimhans.ac.in/" target="_blank" rel="noreferrer" className="hover:underline">NIMHANS</a>
-            <a href="https://www.mohfw.gov.in/" target="_blank" rel="noreferrer" className="hover:underline">MoHFW</a>
-            <a href="tel:18005990019" className="hover:underline">KIRAN: 1800-599-0019</a>
+            <a
+              href="https://www.nimhans.ac.in/"
+              target="_blank"
+              rel="noreferrer"
+              className="hover:underline"
+            >
+              NIMHANS
+            </a>
+            <a
+              href="https://www.mohfw.gov.in/"
+              target="_blank"
+              rel="noreferrer"
+              className="hover:underline"
+            >
+              MoHFW
+            </a>
+            <a href="tel:18005990019" className="hover:underline">
+              KIRAN: 1800-599-0019
+            </a>
           </div>
         </div>
       </footer>
