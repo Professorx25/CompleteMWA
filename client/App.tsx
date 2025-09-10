@@ -30,6 +30,7 @@ const App = () => (
         <BrowserRouter>
           <Routes>
             <Route element={<Layout />}>
+              <Route path="onboarding" element={<Onboarding />} />
               <Route index element={<Index />} />
               <Route path="chat" element={<Chat />} />
               <Route path="screening" element={<Screening />} />
