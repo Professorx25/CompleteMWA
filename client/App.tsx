@@ -16,6 +16,7 @@ import Resources from "@/pages/Resources";
 import Forum from "@/pages/Forum";
 import Dashboard from "@/pages/Dashboard";
 import Journal from "@/pages/Journal";
+import Onboarding from "@/pages/Onboarding";
 import { ThemeProvider } from "@/components/ThemeProvider";
 
 const queryClient = new QueryClient();
