@@ -75,7 +75,8 @@ export default function Dashboard(){
           <CardDescription>Highlight periods with negative mood streaks or high scores</CardDescription>
         </CardHeader>
         <CardContent>
-          <div className="text-sm text-muted-foreground">This demo estimates risk based on local data only. Integrate with institutional databases for department-level heatmaps.</div>
+          <div className="text-sm text-muted-foreground mb-4">This demo estimates risk based on local data only. Integrate with institutional databases for department-level heatmaps.</div>
+          <Heatmap screenings={screenings} mood={mood} />
         </CardContent>
       </Card>
     </div>
