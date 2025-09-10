@@ -35,7 +35,7 @@ export default function Index() {
 
   return (
     <div className="space-y-10">
-      <section className="grid items-center gap-8 md:grid-cols-2">
+      <section className="grid items-center gap-8 md:grid-cols-2 rounded-lg overflow-hidden" style={{ backgroundImage: `linear-gradient(rgba(2,6,23,0.6), rgba(2,6,23,0.4)), url(${HERO_BG})`, backgroundSize: 'cover', backgroundPosition: 'center' }}>
         <div className="space-y-5">
           <Badge>Department of Student Welfare • IQAC</Badge>
           <h1 className="text-4xl md:text-5xl font-extrabold tracking-tight">
