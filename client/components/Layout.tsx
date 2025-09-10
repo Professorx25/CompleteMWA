@@ -26,7 +26,7 @@ export default function Layout() {
             <div className="flex h-8 w-8 items-center justify-center rounded-md bg-primary text-primary-foreground">
               <BrainCircuit className="h-5 w-5" />
             </div>
-            <span>MindSathi</span>
+            <span>MindSpace</span>
             <Badge variant="secondary" className="hidden sm:inline">Beta</Badge>
           </Link>
           <nav className="hidden md:flex items-center gap-2">
