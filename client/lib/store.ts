@@ -138,3 +138,33 @@ export function aiTriage(text: string) {
 export function isHarmful(text: string) {
   return /(suicide|kill|self\-?harm|proana|harm others)/i.test(text);
 }
+
+export type Profile = {
+  id: string;
+  pseudonym: string;
+  collegeId?: string | null;
+};
+
+export function randomNickname() {
+  const adj = ["Gentle","Quiet","Calm","Kind","Brave","Sunny","Gentle","Kind","Warm","Hopeful"];
+  const noun = ["Sunbeam","River","Breeze","Harbor","Willow","Meadow","Horizon","Echo","Pulse","Orbit"];
+  const a = adj[Math.floor(Math.random()*adj.length)];
+  const n = noun[Math.floor(Math.random()*noun.length)];
+  return `${a}${n}${Math.floor(Math.random()*90)+10}`;
+}
+
+export const profileStore = {
+  getProfile(): Profile {
+    const p = read<Profile | null>("profile", null);
+    if (p) return p;
+    const newP: Profile = { id: guid(), pseudonym: randomNickname(), collegeId: null };
+    write("profile", newP);
+    return newP;
+  },
+  setProfile(p: Partial<Profile>) {
+    const cur = profileStore.getProfile();
+    const next = { ...cur, ...p };
+    write("profile", next);
+    return next;
+  },
+};
