@@ -4,6 +4,7 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/com
 import { Badge } from "@/components/ui/badge";
 import { HeartPulse, MessageCircle, Stethoscope, GraduationCap, Users, Activity, Sparkles, Mic, Shield, BellRing, BookOpen } from "lucide-react";
 import { store } from "@/lib/store";
+import { HERO_BG } from "@/assets/logo";
 import { useEffect, useMemo, useState } from "react";
 
 const features = [
