@@ -30,7 +30,7 @@ export type JournalEntry = {
   sentiment: number; // -1..1
 };
 
-const key = (k: string) => `mindsathi:${k}`;
+const key = (k: string) => `mindspace:${k}`;
 
 function read<T>(k: string, fallback: T): T {
   try {
