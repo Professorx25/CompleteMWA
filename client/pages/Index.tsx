@@ -108,22 +108,22 @@ export default function Index() {
           </p>
           <div className="flex flex-wrap gap-3">
             <Button asChild size="lg">
-              <Link to="/screening">
+              <RouterLink to="/screening">
                 <Sparkles className="mr-2" />
                 Start Screening
-              </Link>
+              </RouterLink>
             </Button>
             <Button asChild variant="secondary" size="lg">
-              <Link to="/chat">
+              <RouterLink to="/chat">
                 <MessageCircle className="mr-2" />
                 Talk to AI First-Aid
-              </Link>
+              </RouterLink>
             </Button>
             <Button asChild variant="outline" size="lg">
-              <Link to="#crisis">
+              <RouterLink to="#crisis">
                 <HeartPulse className="mr-2" />
                 Crisis Mode
-              </Link>
+              </RouterLink>
             </Button>
           </div>
           <div className="flex items-center gap-4 pt-2 text-sm text-muted-foreground">
@@ -190,7 +190,7 @@ export default function Index() {
             </CardHeader>
             <CardContent>
               <Button asChild variant="outline">
-                <Link to={f.to}>Open</Link>
+                <RouterLink to={f.to}>Open</RouterLink>
               </Button>
             </CardContent>
           </Card>
@@ -224,12 +224,12 @@ export default function Index() {
             >
               AASRA: 91-22-27546669
             </a>
-            <Link
+            <RouterLink
               to="/booking"
               className="block rounded-md border p-3 hover:bg-accent"
             >
               Contact Campus Counsellor
-            </Link>
+            </RouterLink>
           </CardContent>
         </Card>
         <Card>
