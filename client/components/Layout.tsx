@@ -2,11 +2,13 @@ import { Link, NavLink, Outlet } from "react-router-dom";
 import ThemeToggle from "@/components/ThemeToggle";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
-import { BrainCircuit, HeartPulse } from "lucide-react";
+import { HeartPulse } from "lucide-react";
 import React from "react";
 import { cn } from "@/lib/utils";
+import { LOGO_URL } from "@/assets/logo";
 
 const nav = [
+  { to: "/onboarding", label: "Onboarding" },
   { to: "/", label: "Home" },
   { to: "/chat", label: "AI First-Aid" },
   { to: "/screening", label: "Screening" },
@@ -23,9 +25,7 @@ export default function Layout() {
       <header className="sticky top-0 z-40 border-b bg-background/80 backdrop-blur">
         <div className="container flex h-16 items-center justify-between gap-4">
           <Link to="/" className="flex items-center gap-2 font-semibold">
-            <div className="flex h-8 w-8 items-center justify-center rounded-md bg-primary text-primary-foreground">
-              <BrainCircuit className="h-5 w-5" />
-            </div>
+            <img src={LOGO_URL} alt="MindSpace" className="h-8 w-8 rounded-md bg-primary p-1 object-contain" />
             <span>MindSpace</span>
             <Badge variant="secondary" className="hidden sm:inline">Beta</Badge>
           </Link>
