@@ -118,9 +118,7 @@ export default function Index() {
             <CardDescription>Breathing and grounding exercises</CardDescription>
           </CardHeader>
           <CardContent className="space-y-3">
-            <audio controls className="w-full">
-              <source src="/placeholder.svg" type="audio/mpeg" />
-            </audio>
+            <audio controls className="w-full" />
             <p className="text-sm text-muted-foreground">Add your own guided audio in regional language.</p>
           </CardContent>
         </Card>
