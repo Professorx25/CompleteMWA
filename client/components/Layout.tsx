@@ -28,7 +28,7 @@ export default function Layout() {
             <img
               src={LOGO_URL}
               alt="MindSpace"
-              className="h-8 w-8 rounded-md bg-primary p-1 object-contain"
+              className="h-[50px] w-[50px] rounded-md object-contain self-center flex-grow-0"
             />
             <span>MindSpace</span>
             <Badge variant="secondary" className="hidden sm:inline">
